@@ -20,6 +20,7 @@ TextureManager::TextureManager()
 	AddTexture(HERO_0, "Resources/Hero_MachineGun.png");
 	AddTexture(BULLET_0, "Resources/Bullet0.png");
 	AddTexture(TILES, "Resources/Level.png");
+	AddTexture(FLOORTILE_1, "Resources/FloorTile01.png");
 }
 
 

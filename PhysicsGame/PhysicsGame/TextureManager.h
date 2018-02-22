@@ -5,7 +5,8 @@ enum TextureType
 {
 	HERO_0 = 0,
 	BULLET_0 = 1,
-	TILES = 2
+	TILES = 2,
+	FLOORTILE_1 = 3
 
 };
 

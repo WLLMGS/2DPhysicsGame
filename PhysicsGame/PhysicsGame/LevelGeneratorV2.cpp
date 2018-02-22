@@ -32,8 +32,6 @@ LevelGeneratorV2::~LevelGeneratorV2()
 
 void LevelGeneratorV2::Draw(RenderWindow* pWindow)
 {
-	
-	cout <<"NUMBER OF ROOMS: " << m_Rooms.size() << endl;
 	for(int i{}; i < m_Rooms.size(); ++i)
 	{
 		m_Rooms[i].Draw(pWindow);

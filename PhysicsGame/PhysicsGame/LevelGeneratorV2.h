@@ -7,15 +7,22 @@ public:
 
 	Room(const RectangleShape& rs) : rectangle(rs)
 	{
-		Texture* t = TextureManager::GetInstance()->GetTexture(TILES);
-		
-		
-		IntRect textureRect(0, 0, 16, 16);
-		
+		Texture* t = TextureManager::GetInstance()->GetTexture(FLOORTILE_1);
+		t->setRepeated(true);
+		t->setSmooth(false);
+
+		Vector2f size = rectangle.getSize();
+
+		float width = size.x / 4.0f;
+		float height = size.y / 4.0f;
+
+		//IntRect textureRect(96, 224, 16, 16);
+		IntRect textureRect(0, 0, width, height);
+
 		rectangle.setTexture(t);
 		rectangle.setTextureRect(textureRect);
 
-		float tilesW = rs.getSize().x / TileSize;
+		/*float tilesW = rs.getSize().x / TileSize;
 		float tileV = rs.getSize().y / TileSize;
 
 		Vector2f startPos;
@@ -35,22 +42,24 @@ public:
 				rs->setTextureRect(textureRect);
 				rectangles.push_back(rs);
 			}
-		}
+		}*/
+
 	}
 	
 	void Draw(RenderWindow* pWindow)
 	{
-		for(int i{}; i < rectangles.size(); ++i)
+		/*for(int i{}; i < rectangles.size(); ++i)
 		{
 			pWindow->draw(*rectangles[i]);
-		}
+		}*/
+		pWindow->draw(rectangle);
+
 	}
 
 	RectangleShape rectangle;
 	const float TileSize = 64.0f;
 	
 	vector<RectangleShape*> rectangles;
-	
 };
 
 
