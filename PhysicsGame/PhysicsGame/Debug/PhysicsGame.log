@@ -1,0 +1,12 @@
+﻿  Game.cpp
+d:\game projects\physicsgame\physicsgame\levelgeneratorv2.h(43): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Compiling...
+  LevelGeneratorV2.cpp
+d:\game projects\physicsgame\physicsgame\levelgeneratorv2.h(43): warning C4018: '<': signed/unsigned mismatch
+d:\game projects\physicsgame\physicsgame\levelgeneratorv2.cpp(37): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Main.cpp
+  PhysicsGame.vcxproj -> D:\Game Projects\PhysicsGame\Debug\PhysicsGame.exe
+  PhysicsGame.vcxproj -> D:\Game Projects\PhysicsGame\Debug\PhysicsGame.pdb (Partial PDB)
