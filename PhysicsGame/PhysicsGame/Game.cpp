@@ -10,7 +10,7 @@ using namespace std;
 
 
 Game::Game() :
-m_LevelGenerator()
+m_LevelGenerator(m_pWorld)
 {
 	m_pWindow = new RenderWindow(VideoMode(1920, 1080), "phyics test");
 

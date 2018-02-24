@@ -29,8 +29,8 @@ private:
 
 	RectangleShape m_RectGroundBox;
 
-	int m_velocityIterations = 1;
-	int m_positionIterations = 1;
+	int m_velocityIterations = 6;
+	int m_positionIterations = 2;
 
 	//entity
 	Entity* m_pEntity1;

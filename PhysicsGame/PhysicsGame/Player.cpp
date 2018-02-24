@@ -42,7 +42,7 @@ m_pWorld(world)
 	m_pBody->CreateFixture(&fixtureDef);
 
 
-	//create rectangle shape
+	//create m_Rectangle shape
 	m_Entity.setSize(Vector2f(size * 2.0f, size * 2.0f));
 	m_Entity.setPosition(startPos);
 	m_Entity.setOrigin(Vector2f(size, size));

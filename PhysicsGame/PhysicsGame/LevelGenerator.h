@@ -3,13 +3,13 @@
 struct Room
 {
 	Room(const RectangleShape& rect, bool northSouth) :
-	rectangle(rect),
+	m_Rectangle(rect),
 	m_IsDirectionNorthSouth(northSouth),
 	m_IsDirection1Used(false),
 	m_IsDirection2Used(false)
 	{}
 
-	RectangleShape rectangle;
+	RectangleShape m_Rectangle;
 	bool m_IsDirectionNorthSouth;
 	bool m_IsDirection1Used;
 	bool m_IsDirection2Used;

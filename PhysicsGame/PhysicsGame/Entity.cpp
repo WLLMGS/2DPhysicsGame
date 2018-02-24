@@ -32,7 +32,7 @@ m_StartPos(startPos)
 
 	m_pBody->CreateFixture(&m_fixtureDefine);
 
-	//create rectangle shape
+	//create m_Rectangle shape
 	m_Entity.setSize(Vector2f(m_HalfWitdh * 2.0f, m_HalfHeight * 2.0f));
 	m_Entity.setPosition(m_StartPos);
 	m_Entity.setOrigin(Vector2f(m_HalfWitdh, m_HalfHeight));

@@ -3,32 +3,17 @@
 #include <stdlib.h>
 
 
-LevelGeneratorV2::LevelGeneratorV2()
+LevelGeneratorV2::LevelGeneratorV2(b2World* pWorld) :
+m_pWorld(pWorld)
 {
 	DetermineFirstRoom();
 	DetermineOtherRooms(m_AmountOfRooms);
 	GenerateRooms();
-
-	//debug
-	cout << "level gen complete\n";
-
-	cout << m_Rooms.size() << endl;
-
-	for(int y{}; y < m_Height; ++y)
-	{
-		for(int x{}; x < m_Width; ++x)
-		{
-			cout << m_RoomMap[x][y] << " ";
-		}
-		cout << endl;
-	}
 }
 
 
 LevelGeneratorV2::~LevelGeneratorV2()
-{
-
-}
+{}
 
 void LevelGeneratorV2::Draw(RenderWindow* pWindow)
 {
@@ -106,7 +91,7 @@ void LevelGeneratorV2::GenerateRooms()
 		int x = p.first;
 		int y = p.second;
 
-		//rectangle
+		//m_Rectangle
 		RectangleShape rectRoom;
 
 		//step 1: determine random size
@@ -124,7 +109,7 @@ void LevelGeneratorV2::GenerateRooms()
 		rectRoom.setSize(Vector2f(xSize, ySize));
 		rectRoom.setOrigin(Vector2f(xSize, ySize) / 2.0f);
 
-		Room room = Room(rectRoom);
+		Room room = Room(rectRoom, m_pWorld);
 
 		m_Rooms.push_back(room);
 		

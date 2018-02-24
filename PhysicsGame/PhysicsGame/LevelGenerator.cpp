@@ -11,7 +11,7 @@ LevelGenerator::LevelGenerator()
 
 	for(Room room : m_Rooms)
 	{
-		cout << "[" << room.rectangle.getPosition().x << "," << room.rectangle.getPosition().y << "]" << endl;
+		cout << "[" << room.m_Rectangle.getPosition().x << "," << room.m_Rectangle.getPosition().y << "]" << endl;
 	}
 }
 
@@ -24,7 +24,7 @@ void LevelGenerator::Draw(RenderWindow* pWindow)
 {
 	for(Room r : m_Rooms)
 	{
-		pWindow->draw(r.rectangle);
+		pWindow->draw(r.m_Rectangle);
 	}
 }
 
@@ -42,7 +42,7 @@ void LevelGenerator::InitGeneration()
 
 	Vector2f size{ realWidth, realHeight };
 
-	//rectangle
+	//m_Rectangle
 	RectangleShape rect;
 	rect.setPosition(pos);
 	rect.setSize(size);
@@ -89,8 +89,8 @@ void LevelGenerator::GenerateNewRoom(int iterations)
 				{
 					//add north room
 					//get new position
-					float y = parent.rectangle.getSize().y / 2.0f + newRect.getSize().y / 2.0f + parent.rectangle.getPosition().y + m_RoomOffset;
-					float x = parent.rectangle.getPosition().x;
+					float y = parent.m_Rectangle.getSize().y / 2.0f + newRect.getSize().y / 2.0f + parent.m_Rectangle.getPosition().y + m_RoomOffset;
+					float x = parent.m_Rectangle.getPosition().x;
 					newRect.setPosition({ x,y });
 
 					newRect.setFillColor(Color::Blue);
@@ -106,8 +106,8 @@ void LevelGenerator::GenerateNewRoom(int iterations)
 				else if(!parent.m_IsDirection2Used)
 				{
 					//add south room
-					float y = parent.rectangle.getPosition().y - parent.rectangle.getSize().y / 2.0f - newRect.getSize().y / 2.0f - m_RoomOffset;
-					float x = parent.rectangle.getPosition().x;
+					float y = parent.m_Rectangle.getPosition().y - parent.m_Rectangle.getSize().y / 2.0f - newRect.getSize().y / 2.0f - m_RoomOffset;
+					float x = parent.m_Rectangle.getPosition().x;
 					newRect.setPosition({ x,y });
 
 					newRect.setFillColor(Color::Green);
@@ -131,8 +131,8 @@ void LevelGenerator::GenerateNewRoom(int iterations)
 				if(!parent.m_IsDirection2Used)
 				{
 					//add south room
-					float y = parent.rectangle.getPosition().y - parent.rectangle.getSize().y / 2.0f - newRect.getSize().y / 2.0f - m_RoomOffset;
-					float x = parent.rectangle.getPosition().x;
+					float y = parent.m_Rectangle.getPosition().y - parent.m_Rectangle.getSize().y / 2.0f - newRect.getSize().y / 2.0f - m_RoomOffset;
+					float x = parent.m_Rectangle.getPosition().x;
 					newRect.setPosition({ x,y });
 					newRect.setFillColor(Color::Green);
 					Room newRoom(newRect, false);
@@ -146,8 +146,8 @@ void LevelGenerator::GenerateNewRoom(int iterations)
 				else if(!parent.m_IsDirection1Used)
 				{
 					//add north room
-					float y = parent.rectangle.getSize().y / 2.0f + newRect.getSize().y / 2.0f + parent.rectangle.getPosition().y + m_RoomOffset;
-					float x = parent.rectangle.getPosition().x;
+					float y = parent.m_Rectangle.getSize().y / 2.0f + newRect.getSize().y / 2.0f + parent.m_Rectangle.getPosition().y + m_RoomOffset;
+					float x = parent.m_Rectangle.getPosition().x;
 					newRect.setPosition({ x,y });
 					newRect.setFillColor(Color::Blue);
 
@@ -175,8 +175,8 @@ void LevelGenerator::GenerateNewRoom(int iterations)
 				if (!parent.m_IsDirection1Used)
 				{
 					//add right room
-					float x = parent.rectangle.getPosition().x + parent.rectangle.getSize().x / 2.0f + newRect.getSize().x / 2.0f + m_RoomOffset;
-					float y = parent.rectangle.getPosition().y;
+					float x = parent.m_Rectangle.getPosition().x + parent.m_Rectangle.getSize().x / 2.0f + newRect.getSize().x / 2.0f + m_RoomOffset;
+					float y = parent.m_Rectangle.getPosition().y;
 					newRect.setPosition(x, y);
 
 					newRect.setFillColor(Color::Red);
@@ -192,8 +192,8 @@ void LevelGenerator::GenerateNewRoom(int iterations)
 				else if(!parent.m_IsDirection2Used)
 				{
 					//add left room
-					float x = parent.rectangle.getPosition().x - parent.rectangle.getSize().x / 2.0f - newRect.getSize().x / 2.0f - m_RoomOffset;
-					float y = parent.rectangle.getPosition().y;
+					float x = parent.m_Rectangle.getPosition().x - parent.m_Rectangle.getSize().x / 2.0f - newRect.getSize().x / 2.0f - m_RoomOffset;
+					float y = parent.m_Rectangle.getPosition().y;
 					newRect.setPosition(x, y);
 					newRect.setFillColor(Color::Cyan);
 					Room newRoom(newRect, true);
@@ -213,8 +213,8 @@ void LevelGenerator::GenerateNewRoom(int iterations)
 				{
 					//add left room
 					//add left room
-					float x = parent.rectangle.getPosition().x - parent.rectangle.getSize().x / 2.0f - newRect.getSize().x / 2.0f - m_RoomOffset;
-					float y = parent.rectangle.getPosition().y;
+					float x = parent.m_Rectangle.getPosition().x - parent.m_Rectangle.getSize().x / 2.0f - newRect.getSize().x / 2.0f - m_RoomOffset;
+					float y = parent.m_Rectangle.getPosition().y;
 					newRect.setPosition(x, y);
 					newRect.setFillColor(Color::Cyan);
 
@@ -229,8 +229,8 @@ void LevelGenerator::GenerateNewRoom(int iterations)
 				else if(!parent.m_IsDirection1Used)
 				{
 					//add right room
-					float x = parent.rectangle.getPosition().x + parent.rectangle.getSize().x / 2.0f + newRect.getSize().x / 2.0f + m_RoomOffset;
-					float y = parent.rectangle.getPosition().y;
+					float x = parent.m_Rectangle.getPosition().x + parent.m_Rectangle.getSize().x / 2.0f + newRect.getSize().x / 2.0f + m_RoomOffset;
+					float y = parent.m_Rectangle.getPosition().y;
 					newRect.setPosition(x, y);
 					newRect.setFillColor(Color::Red);
 

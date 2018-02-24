@@ -21,6 +21,7 @@ TextureManager::TextureManager()
 	AddTexture(BULLET_0, "Resources/Bullet0.png");
 	AddTexture(TILES, "Resources/Level.png");
 	AddTexture(FLOORTILE_1, "Resources/FloorTile01.png");
+	AddTexture(WALLTILE_1, "Resources/WallTile01.png");
 }
 
 
